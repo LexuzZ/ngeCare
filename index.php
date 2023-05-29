@@ -35,7 +35,7 @@
 </head>
 
 <body>
-  <form class="form-signin">
+  <form class="form-signin" method="POST" action="cek_login.php">
     <div class="text-center mb-4">
       <img class="mb-4" src="assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
       <h1 class="h3 mb-3 font-weight-normal">Form Login</h1>
@@ -65,7 +65,8 @@
       </label>
     </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    <p class="mt-5 mb-3 text-muted text-center">&copy; 2023</p>
+    <a href="register.php" class="btn btn-lg btn-primary btn-block" >Register</a>
+    <p class="mt-5 mb-3 text-muted text-center">&copy; 2023-<?=date('Y')?></p>
   </form>
 </body>
 
