@@ -44,8 +44,8 @@
     </div>
 
     <div class="form-label-group">
-      <input type="text" class="form-control" name="username" placeholder="Email address" required autofocus>
-      <label>Email address</label>
+      <input type="text" class="form-control" name="username" placeholder="Username address" required autofocus>
+      <label>Username address</label>
     </div>
 
     <div class="form-label-group">
@@ -55,7 +55,7 @@
     <div class="form-label-group">
       <select class="form-control" name="level">
         <option value="Volunteer">Volunteer</option>
-        <option value="User">User</option>
+        <option value="Patient">Patient</option>
       </select>
     </div>
 

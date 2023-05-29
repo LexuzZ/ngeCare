@@ -22,7 +22,7 @@ if($user_valid){
         // uji level user
         if($level == "Volunteer"){
             header('location:home_volunteer.php');
-        }elseif($level == "User"){
+        }elseif($level == "Patient"){
             header('location:home_user.php');
         }
     }else{

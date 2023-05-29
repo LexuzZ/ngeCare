@@ -1,3 +1,39 @@
+<?php
+
+include "koneksi.php";
+
+if(isset($_POST['submit'])){
+
+   $username = mysqli_real_escape_string($koneksi, $_POST['username']);
+   $name = mysqli_real_escape_string($koneksi, $_POST['nama_lengkap']);
+   $pass = md5($_POST['password']);
+   $cpass = md5($_POST['cpassword']);
+   $level = $_POST['level'];
+
+   $select = " SELECT * FROM tuser WHERE username = '$username' && password = '$pass' ";
+
+   $result = mysqli_query($koneksi, $select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      $error[] = 'user already exist!';
+
+   }else{
+
+      if($pass != $cpass){
+         $error[] = 'password not matched!';
+      }else{
+         $insert = "INSERT INTO tuser(username, nama_lengkap, password, level) VALUES('$username', '$name', '$pass','$level')";
+         mysqli_query($koneksi, $insert);
+         header('location:index.php');
+      }
+   }
+
+};
+
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -12,8 +48,6 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/floating-labels/">
 
   <!-- Bootstrap core CSS -->
-  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -29,45 +63,39 @@
         font-size: 3.5rem;
       }
     }
+     
   </style>
   <!-- Custom styles for this template -->
-  <link href="assets/dist/css/floating-labels.css" rel="stylesheet">
+  <link href="assets/dist/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <form class="form-signin">
-    <div class="text-center mb-4">
-      <img class="mb-4" src="assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Form Register</h1>
-      <p>Masukkan Username dan Password anda dengan benar</p>
+   
+<div class="form-container">
 
-    </div>
-
-    <div class="form-label-group">
-      <input type="text" class="form-control" name="username" placeholder="Email address" required autofocus>
-      <label>Email address</label>
-    </div>
-
-    <div class="form-label-group">
-      <input type="password" name="password" class="form-control" placeholder="Password" required>
-      <label>Password</label>
-    </div>
-    <div class="form-label-group">
+   <form action="" method="post">
+      <h3>register now</h3>
+      <?php
+      if(isset($error)){
+         foreach($error as $error){
+            echo '<span class="error-msg">'.$error.'</span>';
+         };
+      };
+      ?>
+      <input type="text" name="username" required placeholder="enter your username">
+      <input type="text" name="nama_lengkap" required placeholder="enter your name">
+      <input type="password" name="password" required placeholder="enter your password">
+      <input type="password" name="cpassword" required placeholder="confirm your password">
       <select class="form-control" name="level">
         <option value="Volunteer">Volunteer</option>
-        <option value="User">User</option>
+        <option value="Patient">Patient</option>
       </select>
-    </div>
+      <input type="submit" name="submit" value="register now" class="form-btn">
+      <p>already have an account? <a href="index.php">login now</a></p>
+   </form>
 
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-    
-    <p class="mt-5 mb-3 text-muted text-center">&copy; 2023-<?=date('Y')?></p>
-  </form>
+</div>
+
 </body>
 
 </html>

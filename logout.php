@@ -6,5 +6,5 @@ unset($_SESSION['nama_lengkap']);
 unset($_SESSION['level']);
 
 session_destroy();
-echo "<script>alert('Anda telah keluar dari halaman administrator');document.location='index.php'</script>";
+echo "<script>alert('Anda telah keluar dari halaman layanan ngeCare');document.location='index.php'</script>";
 ?>
