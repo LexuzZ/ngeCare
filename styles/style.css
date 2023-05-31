@@ -10,36 +10,46 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: #2b2b2b;
-  color: #dedede;
+  background-color: #fff;
+  color: #080808;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
 
 .Landing {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #111;
+  background-color: #D9D9D9;
   padding: 25px;
+  font-size: 3rem;
   border-radius: 5px;
 }
+
 .Landing button {
-  padding: 5px 7px;
-  background-color: #5e77ac;
-  color: white;
+  padding: 2rem 3rem;
+  margin: 1rem;
+
+  background-color: #0C134F;
+  color: rgb(248, 240, 240);
   border: none;
+  font-size: 3rem;
   border-radius: 3px;
   cursor: pointer;
 }
+
+
 
 .Dashboard {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .Dashboard .foto-user {
   background-color: black;
   width: 150px;
@@ -49,12 +59,17 @@
   background-position: center;
   border-radius: 10px;
 }
+
 .Dashboard button {
   padding: 5px 7px;
-  background-color: #5e77ac;
+  background-color: #be1307;
   color: white;
   cursor: pointer;
   border: none;
   border-radius: 3px;
   margin-top: 10px;
-}/*# sourceMappingURL=style.css.map */
+}
+
+
+
+/*# sourceMappingURL=style.css.map */

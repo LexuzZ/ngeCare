@@ -12,15 +12,15 @@ const Dashboard = (user) => {
     let displayName = user.displayName;
     let photoURL = user.photoURL;
     let email = user.email;
-    let uid = user.uid;
+    
 
     const element = document.createElement('div');
     element.classList.add('Dashboard');
     element.innerHTML = (`
         <div class="foto-user"></div>
-        <div class="nama-user">Nama: ${displayName}</div>
-        <div class="email-user">Email: ${email}</div>
-        <div class="id-user">UID: ${uid}</div>
+        <div class="nama-user">${displayName}</div>
+        <div class="email-user">${email}</div>
+        
         <button data-button="logout">Logout</button>
     `);
 
@@ -37,7 +37,7 @@ const Dashboard = (user) => {
 const Landing = () => {
     const element = document.createElement('div');
     element.classList.add('Landing');
-    element.innerHTML = (`<button data-button="login" >Google Login</button>`);
+    element.innerHTML = (`<button data-button="login" >Login with Google</button>`);
 
     container.innerHTML = '';
     container.appendChild(element);
