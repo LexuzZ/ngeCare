@@ -1,17 +1,88 @@
 <!DOCTYPE html>
 <html lang="id">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    
 
     <title>ngeCare</title>
-</head>
+  </head>
 
-<body>
+  <body>
+    <!--header section start-->
+    <header>
+      <input type="checkbox" name="" id="toggler" />
+      <label for="toggler" class="fas fa-bars"></label>
+
+      <div class="logo">
+        <h1>NgeCare</h1>
+      </div>
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#aboutUs">About Us</a>
+        <a href="#feature">Features</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
     <div class="container">Loading</div>
+
+    <!--home section start-->
+    <section class="home" id="home">
+        <div class="content">
+            <h3>Find the good life</h3>
+            <span>by good health</span>
+            <p>Pentingnya konsultasi penyakit yang dialami demi mencegah penyakit yang semakin parah.
+            Konsultasikan kepada kami, maka kami siap membantu anda dengan senang hati</p>
+            <a href="#" class="btn">Consultation Now</a>
+        </div>
+    </section>
+    <!--home section finish-->
+
+    <!--about start-->
+    <section class="about" id="about">
+       <h1 class="heading"> <span> About </span> us </h1> 
+
+       <div class="row">
+            <div class="image-container">
+                <img src="public/images/content2.jpg">
+                <h3>best service</h3>
+            </div>
+
+            <div class="content">
+                <h3>why choose NgeCare?</h3>
+                <p>Karena NgeCare selalu membantu konsultasi masyarakat dengan senang hati tanpa bayaran
+                Dan bersama kami, kamu bisa berkonsultasi bersama dokter terpercaya dan bersertifikasi
+                Ada berbagai fitur yang kami sediakan untuk membantu jalannya konsultasi tanpa harus ke rumah sakit </p>
+                <p>Mari konsultasikan penyakit anda dengan kami, maka dengan senang hati kami akan membantu
+                memberikan solusi pengobatan beserta resep obat apabila dibutuhkan</p>
+                <a href="#" class="btn">Learn More</a>
+                </p>
+            </div>
+       </div>
+    </section>
+    <!--about finish-->
+
+    <!--feature start-->
+    <section class="icons-container">
+        <div class="icons">
+           <img src="public/icon/icon1.png" alt="" >
+           <div class="info">
+                <h3>Free Consultation</h3>
+                <span>for all</span>
+           </div>
+        </div>
+
+        <div class="icons">
+            <img src="public/icon/icon2.png" alt="" >
+            <div class="info">
+                 <h3>Input Data</h3>
+                 <span>for volunteer</span>
+            </div>
+         </div>
+    </section>
+    <!--feature end-->
 
     <!-- FIREBASE WAJIB -->
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -24,7 +95,5 @@
 
     <script src="./scripts/firebase-config.js"></script>
     <script src="./scripts/script.js"></script>
-</body>
-
-
+  </body>
 </html>
