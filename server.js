@@ -6,7 +6,7 @@ const app = express();
 
 app.use(BodyParser.urlencoded({ extended: true }));
 
-app.set("view engine", "html");
+app.set("view engine", "ejs");
 app.set("views", "views");
 
 const db = mysql.createConnection({
