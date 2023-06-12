@@ -78,46 +78,9 @@ section{
    background: #0C134F; 
 }
 
-header{
-    
-    background: #9BABB8;
-    padding:2rem 9%;
-    display:flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000;
-    box-shadow: 0 .5rem 1rem rgb(245, 241, 241);
-}
 
-header .logo h1{
-    font-size: 3rem;
-    color: #0C134F;
-    font-weight: bolder;
-}
 
-header .navbar a{
-    font-size: 1.5rem;
-    padding:0 2rem;
-    color:#666;
-}
 
-header .navbar a:hover{
-    color:#fff;
-}
-
-header #toggler{
-    display: none;
-}
-
-header .fa-bars{
-    font-size: 3rem;
-    color: #333;
-    border-radius: .5rem;
-    padding:.5rem 1.5rem;
-    cursor: pointer;
-    border:.1rem solid rgba(0,0,0,.3);
-    display: none;
-}
 
 .home{
     display: flex;
@@ -407,62 +370,66 @@ header .fa-bars{
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-      <a class="navbar-brand" href="<%= url %>">ngeCare</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="<%= url %>">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="<%= url %>profile">Profile</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-toggle="dropdown"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
-              <%= userName %>
-            </a>
-            <div
-              class="dropdown-menu dropdown-menu-right"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <a class="dropdown-item" href="<%= url %>profile">Profil</a>
-              <a class="dropdown-item" href="<%= url %>login/logout">Logout</a>
-            </div>
-          </li>
-        </ul>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark ">
+        <a class="navbar-brand" href="<%= url %>">ngeCare</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="<%= url %>">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<%= url %>profile">Profile</a>
+            </li>
+  
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <%= userName %>
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="<%= url %>profile">Profil</a>
+                <a class="dropdown-item" href="<%= url %>login/logout">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="jumbotron mt-5">
+        <h1 class="display-4">Find the good life</h1>
+        <p class="lead">by good health</p>
+        <hr class="my-4">
+        <p>Pentingnya konsultasi penyakit yang dialami demi mencegah penyakit
+          yang semakin parah. Konsultasikan kepada kami, maka kami siap membantu
+          anda dengan senang hati</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Consultation Now</a>
       </div>
-    </nav>
+    </header>
+    
 
     <!--home section start-->
-    <div class="jumbotron">
-      <h1 class="display-4">Find the good life</h1>
-      <p class="lead">by good health</p>
-      <hr class="my-4">
-      <p>Pentingnya konsultasi penyakit yang dialami demi mencegah penyakit
-        yang semakin parah. Konsultasikan kepada kami, maka kami siap membantu
-        anda dengan senang hati</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Consultation Now</a>
-    </div>
+    
     
     <!--about start-->
     <section class="about" id="about">
@@ -501,7 +468,7 @@ header .fa-bars{
        <div class="icons">
            <img src="public/icon/icon2.png" alt="" >
            <div class="info">
-                <a href="<%= url %>form">Input Data</a>
+            <a class="nav-link" href="<%= url %>form">form</a>
                 <span>for volunteer</span>
            </div>
         </div>
