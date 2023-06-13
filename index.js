@@ -52,6 +52,35 @@ app.use("/login", loginRoutes);
 app.use("/register", registerRoutes);
 app.use("/", appRoutes);
 
+// db
+const db = mysql.createConnection({
+  host: "localhost",
+  database: "dbcare",
+  user: "root",
+  password: "",
+});
+
+db.connect((err) => {
+  if (err) throw err;
+  console.log("database connected...");
+
+  app.get("/form", (req, res) => {
+    const sql = "SELECT * FROM user";
+    db.query(sql, (err, result) => {
+      const users = JSON.parse(JSON.stringify(result));
+      res.render("form", { users: users, title: "Daftar Pasien dan Keluhan" });
+    });
+  });
+  app.post("/tambah", (req, res) => {
+    const insertSql = `INSERT INTO user (nama, keluhan) VALUES ('${req.body.nama}', '${req.body.keluhan}');`;
+
+    db.query(insertSql, (err, result) => {
+      if (err) throw err;
+      res.redirect("/");
+    });
+  });
+});
+
 // Gunakan port server
 app.listen(5050, () => {
   console.log("Server Berjalan di Port : " + 5050);
