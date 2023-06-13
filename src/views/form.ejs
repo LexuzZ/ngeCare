@@ -13,11 +13,11 @@
   </head>
   <body>
     <div class="container">
-      <h1><%= title %></h1>
+      <h1 class="text-center"><%= title %></h1>
 
       <table class="table">
         <thead>
-          <tr>
+          <tr class="table-dark">
             <th scope="col">id</th>
             <th scope="col">Nama</th>
             <th scope="col">Keluhan</th>
@@ -25,7 +25,7 @@
         </thead>
         <tbody>
           <% for (let user of users) { %>
-          <tr>
+          <tr class="table-secondary">
             <th scope="row"><%= user.id %></th>
             <th scope="row"><%= user.nama %></th>
             <th scope="row"><%= user.keluhan %></th>
@@ -50,7 +50,12 @@
             <input type="text" name="keluhan" class="form-control" />
           </div>
         </div>
-        <input type="submit" class="btn btn-danger" value="Tambahkan" />
+        <div class="d-flex justify-content-evenly">
+          <input type="submit" class="btn btn-success" value="Tambahkan" />
+          <a class="btn btn-primary btn-lg" href="/" role="button"
+            >Back to Home</a
+          >
+        </div>
       </form>
     </div>
 
