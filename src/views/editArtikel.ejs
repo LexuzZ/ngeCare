@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Data</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+        <h1 class="text-center m-5">Edit Data</h1>
+        <form action="/editArtikel/<%= data.id %>" method="POST">
+          
+    
+          <div class="row mb-3">
+            <label for="penyakit" class="col-sm-2 col-form-label fw-semibold"
+              >Nama Lengkap</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                name="penyakit"
+                class="form-control"
+                value="<%= data.penyakit %>"
+              />
+            </div>
+          </div>
+          <div class="row mb-3">
+            <label for="artikel" class="col-sm-2 col-form-label fw-semibold"
+              >Keluhan Pasien</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="text"
+                name="artikel"
+                class="form-control"
+                value="<%= data.artikel %>"
+              />
+            </div>
+            
+            <div class="d-flex justify-content-evenly mt-3">
+                <input
+                  type="submit"
+                  class="btn btn-success"
+                  id="liveAlertBtn"
+                  value="Simpan"
+                />
+          </div>
+        </form>
+    </div>
+    
+  </body>
+</html>

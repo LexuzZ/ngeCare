@@ -125,6 +125,37 @@ db.connect((err) => {
       res.redirect("/");
     });
   });
+  // Menampilkan halaman edit
+  app.get("/editArtikel/:id", (req, res) => {
+    const id = req.params.id;
+    db.query("SELECT * FROM volunter WHERE id = ?", id, (err, result) => {
+      if (err) throw err;
+      res.render("editArtikel", { data: result[0] });
+    });
+  });
+
+  // Mengupdate data
+  app.post("/editArtikel/:id", (req, res) => {
+    const id = req.params.id;
+    const { penyakit, artikel } = req.body;
+    db.query(
+      "UPDATE volunter SET penyakit = ?, artikel = ? WHERE id = ?",
+      [penyakit, artikel, id],
+      (err, result) => {
+        if (err) throw err;
+        res.redirect("/");
+      }
+    );
+  });
+
+  // Menghapus data
+  app.get("/deleteArtikel/:id", (req, res) => {
+    const id = req.params.id;
+    db.query("DELETE FROM volunter WHERE id = ?", id, (err, result) => {
+      if (err) throw err;
+      res.redirect("/");
+    });
+  });
 });
 
 // Gunakan port server
