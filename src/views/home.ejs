@@ -169,6 +169,52 @@ section{
     line-height: 1.5;
 }
 
+.row{
+  display: flex;
+  flex-direction: #fff;
+  color: #111;
+}
+
+.content{
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 2px;
+  line-height: 1.4rem;
+  box-shadow: 0 0 1rem rgba(0,0,0,1);
+}
+
+#check{
+  display: none;
+}
+
+.read-more-text{
+  display: none;
+  transition: 0.5s linear;
+}
+
+label{
+  display: inline-block;
+  text-decoration: underline;
+  color: #526D82;
+  cursor: pointer;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+#check:checked ~ .read-more-text{
+  display: block;
+}
+
+#check:checked ~ label{
+  visibility: hidden;
+}
+
+#check:checked ~label:after{
+  content: 'Show Less';
+  display: block;
+  visibility: visible;
+}
+
 .icons-container{
     background: #eee;
     display:flex;
@@ -357,15 +403,20 @@ section{
            </div>
 
            <div class="content">
+            <input type="checkbox" id="check">
                <h3>why choose NgeCare?</h3>
-               <p>Karena NgeCare selalu membantu konsultasi masyarakat dengan senang hati tanpa bayaran
-               Dan bersama kami, kamu bisa berkonsultasi bersama dokter terpercaya dan bersertifikasi
-               Ada berbagai fitur yang kami sediakan untuk membantu jalannya konsultasi tanpa harus ke rumah sakit </p>
-               <p>Mari konsultasikan penyakit anda dengan kami, maka dengan senang hati kami akan membantu
-               memberikan solusi pengobatan beserta resep obat apabila dibutuhkan</p>
-               <a href="#" class="btn">Learn More</a>
-               </p>
+               <p>Karena NgeCare selalu membantu konsultasi masyarakat dengan senang hati tanpa bayaran.
+               Dan bersama kami, kamu bisa berkonsultasi bersama dokter terpercaya dan bersertifikasi.
+               Ada berbagai fitur yang kami sediakan untuk membantu jalannya konsultasi tanpa harus ke rumah sakit.</p>
+              <div class="read-more-text">
+                <p>Tersedia fitur live chat untuk memudahkan pengguna dalam konsultasi secara langsung dengan dokter, ini sangat
+                efesien dan juga lebih cepat, hanya dengan dirumah saja keluhan yang dialami akan teratasi. 
+                Selain itu terdapat free konsultasi yang mana pengguna cukup menginputkan keluhannya, maka akan ada beberapa
+                rekomendasi obat, cara penanganan, dan tindakan medis yang harus di lakukan.
+                Mari konsultasikan penyakit anda dengan kami, maka dengan senang hati kami akan membantu
+                memberikan solusi pengobatan beserta resep obat apabila dibutuhkan!</p>
            </div>
+           <label for="check">Read More</label>
       </div>
    </section>
    <!--about finish-->
@@ -433,11 +484,11 @@ section{
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
             <!-- Content -->
             <h6 class="text-uppercase fw-bold mb-4">
-              <i class="fas fa-gem me-3"></i>Company name
+              <i class="fas fa-gem me-3"></i>Ngecare
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer content. Lorem ipsum
-              dolor sit amet, consectetur adipisicing elit.
+              Ngecare siap untuk membantu anda dalam mengatasi segala keluhan yang anda rasakan secara cepat, mudah dan murah.
+              Atasi keluhan sakit mu dari rumah saja.
             </p>
           </div>
           <!-- Grid column -->
@@ -446,13 +497,13 @@ section{
           <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mb-4">
-              Products
+              Layanan Kami
             </h6>
             <p>
-              <a href="#!" class="text-reset">Angular</a>
+              <a href="#!" class="text-reset">Free Consultation</a>
             </p>
             <p>
-              <a href="#!" class="text-reset">React</a>
+              <a href="#!" class="text-reset">Live Chat</a>
             </p>
             <p>
               <a href="#!" class="text-reset">Vue</a>
@@ -487,11 +538,11 @@ section{
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p><i class="m-1 bi bi-map-fill"></i> New York, NY 10012, US</p>
+            <h6 class="text-uppercase fw-bold mb-4">Pusat Bantuan</h6>
+            <p><i class="m-1 bi bi-map-fill"></i> Bandung, No. 50, Jawa Barat</p>
             <p>
               <i class="m-1 bi bi-envelope-at"></i>
-              info@example.com
+              info@ngecare.com
             </p>
             <p><i class="m-1 bi bi-telephone-fill"></i> + 01 234 567 88</p>
             <p><i class="m-1 bi bi-telephone-fill"></i> + 01 234 567 89</p>
