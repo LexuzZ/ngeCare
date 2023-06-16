@@ -20,52 +20,52 @@
           <tr class="table-dark text-center">
             <th scope="col">id</th>
             <th scope="col">Nama</th>
-            <th scope="col">Keluhan</th>
+            <th scope="col">artikel</th>
             <th scope="col">Aksi</th>
+
           </tr>
         </thead>
         <tbody>
           <% for (let user of users) { %>
-          <tr class="table-secondary text-center">
+          <tr class="table-secondary ">
             <th scope="row"><%= user.id %></th>
-            <th scope="row"><%= user.nama %></th>
-            <th scope="row"><%= user.keluhan %></th>
+            <th scope="row"><%= user.penyakit %></th>
+            <th scope="row"><%= user.artikel %></th>
             <th scope="row">
-              <a class="btn btn-warning" href="/edit/<%= user.id %>">Edit</a
-              ><a class="btn btn-danger" href="/delete/<%= user.id %>">
-                Hapus</a
-              >
-            </th>
+                <a class="btn btn-warning" href="/edit/<%= user.id %>">Edit</a
+                ><a class="btn btn-danger mt-3" href="/delete/<%= user.id %>">
+                  Hapus</a
+                >
+              </th>
           </tr>
 
           <% } %>
         </tbody>
       </table>
-      <form action="/tambah" method="POST">
-        <h4 class="text-center m-5">Tambah Data Pasien</h4>
-        <div class="row mb-3">
-          <label for="nama" class="col-sm-2 col-form-label fw-semibold"
-            >Nama Lengkap</label
-          >
-          <div class="col-sm-10">
-            <input type="text" name="nama" class="form-control" />
-          </div>
-        </div>
-        <div class="row mb-3">
-          <label for="keluhan" class="col-sm-2 col-form-label fw-semibold"
-            >Keluhan Pasien</label
-          >
-          <div class="col-sm-10">
-            <input type="text" name="keluhan" class="form-control" />
-          </div>
-        </div>
-        <div class="d-flex justify-content-evenly">
+      <form action="/tambahArtikel" method="POST">
+        <h4 class="text-center m-5">Tambah Artikel</h4>
+        <div class="form-floating mb-3">
           <input
-            type="submit"
-            class="btn btn-success"
-            id="liveAlertBtn"
-            value="Tambahkan"
+            type="text"
+            class="form-control"
+            id="floatingInput"
+            name="penyakit"
           />
+          <label for="floatingInput">Gejala / Penyakit</label>
+        </div>
+
+        <div class="form-floating">
+          <textarea
+            class="form-control"
+            id="floatingTextarea2"
+            style="height: 200px"
+            name="artikel"
+          ></textarea>
+          <label for="floatingTextarea2">Article</label>
+        </div>
+
+        <div class="d-flex justify-content-evenly">
+          <input type="submit" class="btn btn-success" value="Tambahkan" />
           <a class="btn btn-primary btn-lg" href="/" role="button">Kembali</a>
         </div>
       </form>
@@ -77,4 +77,4 @@
       crossorigin="anonymous"
     ></script>
   </body>
-</html>
+</htm

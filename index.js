@@ -59,7 +59,7 @@ const db = mysql.createConnection({
   user: "root",
   password: "",
 });
-
+// data pasien
 db.connect((err) => {
   if (err) throw err;
   console.log("database connected...");
@@ -73,6 +73,52 @@ db.connect((err) => {
   });
   app.post("/tambah", (req, res) => {
     const insertSql = `INSERT INTO user (nama, keluhan) VALUES ('${req.body.nama}', '${req.body.keluhan}');`;
+
+    db.query(insertSql, (err, result) => {
+      if (err) throw err;
+      res.redirect("/");
+    });
+  });
+  // Menampilkan halaman edit
+  app.get("/edit/:id", (req, res) => {
+    const id = req.params.id;
+    db.query("SELECT * FROM user WHERE id = ?", id, (err, result) => {
+      if (err) throw err;
+      res.render("edit", { data: result[0] });
+    });
+  });
+
+  // Mengupdate data
+  app.post("/edit/:id", (req, res) => {
+    const id = req.params.id;
+    const { nama, keluhan } = req.body;
+    db.query(
+      "UPDATE user SET nama = ?, keluhan = ? WHERE id = ?",
+      [nama, keluhan, id],
+      (err, result) => {
+        if (err) throw err;
+        res.redirect("/");
+      }
+    );
+  });
+
+  // Menghapus data
+  app.get("/delete/:id", (req, res) => {
+    const id = req.params.id;
+    db.query("DELETE FROM user WHERE id = ?", id, (err, result) => {
+      if (err) throw err;
+      res.redirect("/");
+    });
+  });
+  app.get("/artikel", (req, res) => {
+    const sql = "SELECT * FROM volunter";
+    db.query(sql, (err, result) => {
+      const users = JSON.parse(JSON.stringify(result));
+      res.render("artikel", { users: users, title: "Daftar Artikel" });
+    });
+  });
+  app.post("/tambahArtikel", (req, res) => {
+    const insertSql = `INSERT INTO volunter (penyakit, artikel) VALUES ('${req.body.penyakit}', '${req.body.artikel}');`;
 
     db.query(insertSql, (err, result) => {
       if (err) throw err;
