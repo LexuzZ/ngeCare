@@ -254,8 +254,51 @@ label{
   background-image: url("../public/images/home.jpg");
   background-size: cover;
 }
-
-
+.card {
+	position: relative;
+	isolation: isolate;
+	width: 400px;
+	height: 200px;
+	background-color: #000;
+	border-radius: 8px;
+}
+.card__image {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: 0 20%;
+	border-radius: inherit;
+	transition: transform 250ms;
+}
+.card:hover .card__image {
+	transform: translateY(-112px) scale(0.75);
+}
+.card__body {
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	display: flex;
+	align-items: flex-end;
+	justify-content: space-between;
+	padding: 24px;
+	color: #f4c644;
+}
+.card__category {
+	color: #fff;
+}
+.card__button {
+	display: inline-block;
+	text-decoration: none;
+	padding: 10px 15px;
+	border-radius: 4px;
+	background-color: #f4c644;
+	color: #000;
+	transition: background-color 250ms;
+}
+.card__button:hover{
+	background-color: #d9ad34;
+}
 /*media queries */
 @media (max-width:991px) {
     html{
@@ -275,7 +318,7 @@ label{
     }
 }
 
-@media (max-width:768px){
+@media (max-width:450px){
     html .fa-bars{
         display: block;
     }
@@ -350,8 +393,12 @@ label{
             <li class="nav-item active">
               <a class="nav-link" href="<%= url %>">Home</a>
             </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="<%= url %>profile">Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About Us</a>
             </li>
   
             <li class="nav-item dropdown">
@@ -420,6 +467,87 @@ label{
       </div>
    </section>
    <!--about finish-->
+    <!--about start-->
+    <section class="about" id="about">
+      <h1 class="heading"> <span> Team </span> Developer </h1> 
+      
+      <div class="container text-center">
+        <div class="row">
+          <div class="col">
+            <figure class="card">
+              <img
+                src="../public/images/home.jpg"
+                alt="..."
+                class="card__image"
+              />
+              <figcaption class="card__body">
+                <div>
+                  <h2 class="card__category">M Haikal Hanis</h2>
+                  <p class="card__author">Software Engineering</p>
+                </div>
+                <a href="#" class="card__button "><i class="bi bi-github"> GitHub</i></i></a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="card">
+              <img
+                src="../public/images/taka.jpg"
+                alt="..."
+                class="card__image"
+              />
+              <figcaption class="card__body">
+                <div>
+                  <h2 class="card__category">Haerul Taka</h2>
+                  <p class="card__author">Software Engineering</p>
+                </div>
+                <a href="https://github.com/LexuzZ" class="card__button "><i class="bi bi-github"> GitHub</i></i></a>
+              </figcaption>
+            </figure>
+            
+          </div>
+          <div class="col">
+            <figure class="card">
+              <img
+                src="../public/images/home.jpg"
+                alt="..."
+                class="card__image"
+              />
+              <figcaption class="card__body">
+                <div>
+                  <h2 class="card__category">Melani</h2>
+                  <p class="card__author">Software Engineer</p>
+                </div>
+                <a href="https://github.com/melaninurliess" class="card__button "><i class="bi bi-github"> GitHub</i></i></a>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="col">
+            <figure class="card">
+              <img
+                src="../public/images/home.jpg"
+                alt="..."
+                class="card__image"
+              />
+              <figcaption class="card__body">
+                <div>
+                  <h2 class="card__category">Nafisah</h2>
+                  <p class="card__author">Software Engineer</p>
+                </div>
+                <a href="https://github.com/nafisahdrnn" class="card__button "><i class="bi bi-github"> GitHub</i></i></a>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      
+
+           
+      </div>
+   </section>
+   <!--about finish-->
+  
 
    <!--feature start-->
    <section class="icons-container">
@@ -514,27 +642,7 @@ label{
           </div>
           <!-- Grid column -->
   
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p>
-              <a href="#!" class="text-reset">Pricing</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Settings</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Orders</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Help</a>
-            </p>
-          </div>
-          <!-- Grid column -->
-  
+         
           <!-- Grid column -->
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
