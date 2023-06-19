@@ -110,6 +110,8 @@ db.connect((err) => {
       res.redirect("/");
     });
   });
+
+  // db artikel
   app.get("/artikel", (req, res) => {
     const sql = "SELECT * FROM volunter";
     db.query(sql, (err, result) => {
@@ -155,6 +157,9 @@ db.connect((err) => {
       if (err) throw err;
       res.redirect("/");
     });
+  });
+  app.get("/medical", function (req, res) {
+    res.render("medical");
   });
 });
 
